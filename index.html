@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Osteopatia e fisioterapia personalizzata a Genova con la Dott.ssa Ilaria Capalbo. Prenota una seduta per adulti, sportivi, gravidanza e bambini." />
+  <title>Dott.ssa Ilaria Capalbo | Osteopata D.O. e Fisioterapista a Genova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #211f27;
+      --muted: #67616f;
+      --line: #ebe7f0;
+      --soft: #f8f5fb;
+      --lavender: #a986e8;
+      --lavender-dark: #6d50a7;
+      --gold: #f4b942;
+      --white: #ffffff;
+      --green: #22c55e;
+      --shadow: 0 24px 70px rgba(48, 38, 68, .12);
+      --radius: 8px;
+      --container: min(1160px, calc(100% - 36px));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .88);
+      border-bottom: 1px solid rgba(235, 231, 240, .75);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--lavender-dark); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--lavender-dark);
+      color: var(--white);
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(109, 80, 167, .22);
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.025);
+      background: #5e4597;
+      box-shadow: 0 18px 38px rgba(109, 80, 167, .28);
+      animation: ctaPulse .9s ease;
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 18px 38px rgba(109, 80, 167, .28); }
+      50% { box-shadow: 0 18px 44px rgba(109, 80, 167, .38), 0 0 0 8px rgba(169, 134, 232, .12); }
+    }
+
+    .btn.secondary {
+      background: var(--white);
+      color: var(--lavender-dark);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .hamburger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 4px auto;
+      background: currentColor;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    section {
+      position: relative;
+      padding: 108px 0;
+      transition: background .4s ease;
+    }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      padding: 64px 0 92px;
+      background:
+        radial-gradient(circle at 80% 16%, rgba(169, 134, 232, .18), transparent 34%),
+        linear-gradient(180deg, #fff 0%, #faf8fd 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--lavender-dark);
+      font-weight: 800;
+      font-size: .92rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--lavender);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 680px;
+      margin-bottom: 22px;
+      font-size: clamp(3rem, 7vw, 6.4rem);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .hero-note svg { color: var(--green); flex: 0 0 auto; }
+
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 13px;
+      border: 1px solid rgba(169, 134, 232, .26);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .72);
+      color: var(--ink);
+      font-size: .9rem;
+      font-weight: 800;
+      box-shadow: 0 10px 28px rgba(48, 38, 68, .06);
+    }
+
+    .trust-pill svg {
+      color: var(--lavender-dark);
+      flex: 0 0 auto;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 4% -6% 8%;
+      z-index: 0;
+      background: radial-gradient(circle at 50% 42%, rgba(169, 134, 232, .48), rgba(248, 245, 251, .18) 48%, transparent 70%);
+      filter: blur(24px);
+      pointer-events: none;
+    }
+
+    .doctor-frame {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 540px);
+      overflow: hidden;
+      border-radius: 0 0 42% 42%;
+      background: linear-gradient(180deg, #f6f2fb 0%, #eee6fa 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .doctor-frame img {
+      width: 100%;
+      min-height: 580px;
+      object-fit: cover;
+      object-position: center top;
+      transform: scale(1.12);
+    }
+
+    .hero-badge {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 52px;
+      width: 232px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .92);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-size: 1.65rem;
+      line-height: 1;
+    }
+
+    .hero-badge span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 46px;
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2.15rem, 4.2vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .section-head p,
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .proof {
+      background: linear-gradient(180deg, #fff 0%, #faf8fd 50%, #fff 100%);
+    }
+
+    .rating-panel {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .rating-summary,
+    .review-card,
+    .service-card,
+    .step-card,
+    .faq-item,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 18px 50px rgba(48, 38, 68, .07);
+    }
+
+    .rating-summary {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(145deg, #fff, #faf7fe);
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1.65rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .rating-summary h3 {
+      margin-bottom: 8px;
+      font-size: 1.55rem;
+    }
+
+    .rating-summary p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: .95rem;
+    }
+
+    .reviews {
+      display: grid;
+      gap: 16px;
+    }
+
+    .review-card {
+      padding: 24px;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      transform-origin: center center;
+    }
+
+    .review-card:hover {
+      transform: translateY(-6px) rotate(0.5deg);
+      border-color: rgba(169, 134, 232, .36);
+      box-shadow: var(--shadow);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 1.1rem;
+      line-height: 1;
+      transform-origin: left center;
+    }
+
+    .review-name {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .review-card p {
+      margin-bottom: 14px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .review-card .verified-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: .94rem;
+      font-weight: 700;
+    }
+
+    .review-card .verified-label::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, .12);
+    }
+
+    .about,
+    .how,
+    .contact {
+      background: linear-gradient(180deg, #faf8fd 0%, #fff 50%, #faf8fd 100%);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      align-items: center;
+      gap: 58px;
+    }
+
+    .portrait-stack {
+      position: relative;
+    }
+
+    .portrait-main,
+    .education-img {
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--soft);
+    }
+
+    .portrait-main img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .mini-photo {
+      position: absolute;
+      right: -28px;
+      bottom: -32px;
+      width: 48%;
+      overflow: hidden;
+      border: 10px solid var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .mini-photo img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .content-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .content-list div {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .check {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #efe7fb;
+      color: var(--lavender-dark);
+      font-weight: 900;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card img {
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      object-fit: cover;
+    }
+
+    .service-card .body {
+      padding: 22px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.18rem;
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .education {
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .education-copy {
+      padding: 42px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 460px;
+    }
+
+    .education-copy p { color: rgba(255, 255, 255, .74); }
+
+    .education-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .education-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .education-img.tall { grid-row: span 2; }
+
+    .education-img.tall img {
+      object-position: center top;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: steps;
+    }
+
+    .step-card {
+      position: relative;
+      padding: 30px 24px;
+      overflow: hidden;
+    }
+
+    .step-card::before {
+      counter-increment: steps;
+      content: "0" counter(steps);
+      display: block;
+      margin-bottom: 34px;
+      color: var(--lavender-dark);
+      font-size: 2.2rem;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .step-card h3 { margin-bottom: 10px; }
+    .step-card p { color: var(--muted); margin-bottom: 0; }
+
+    .faq-grid {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-question {
+      width: 100%;
+      min-height: 66px;
+      padding: 0 22px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .faq-question svg {
+      flex: 0 0 auto;
+      transition: transform .25s ease;
+    }
+
+    .faq-item.active .faq-question svg { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 22px 22px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hours-section {
+      background: linear-gradient(135deg, #f8f5fb 0%, #faf8fd 100%);
+      border-radius: var(--radius);
+      padding: 42px 34px;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 40px rgba(48, 38, 68, .06);
+      opacity: 0;
+      transform: translateY(34px);
+    }
+
+    .hours-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(235, 231, 240, .6);
+    }
+
+    .hours-row:last-child {
+      border-bottom: 0;
+    }
+
+    .hours-day {
+      color: var(--ink);
+      font-weight: 800;
+      font-size: .95rem;
+      min-width: 140px;
+    }
+
+    .hours-divider {
+      height: 2px;
+      background: var(--line);
+      flex: 1;
+    }
+
+    .hours-time {
+      color: var(--ink);
+      font-weight: 800;
+      text-align: right;
+      font-size: .95rem;
+      white-space: nowrap;
+    }
+
+    .hours-note {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(235, 231, 240, .6);
+      color: var(--muted);
+      font-size: .95rem;
+      font-style: italic;
+    }
+
+    .contact-card {
+      padding: 34px;
+    }
+
+    .contact-trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .contact-trust span {
+      min-height: 72px;
+      padding: 12px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbf9fd;
+      color: var(--ink);
+      font-size: .88rem;
+      font-weight: 800;
+    }
+
+    .contact-row {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row:first-of-type { padding-top: 0; }
+    .contact-row:last-of-type { border-bottom: 0; }
+
+    .label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .contact-row strong,
+    .contact-row a {
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .hours {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .hours div {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 18px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(235, 231, 240, .72);
+    }
+
+    .hours div:last-child {
+      border-bottom: 0;
+    }
+
+    .hours strong {
+      text-align: right;
+      color: var(--ink);
+    }
+
+    .action-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 26px 0 18px;
+    }
+
+    .action-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      color: var(--white);
+      box-shadow: 0 14px 28px rgba(33, 31, 39, .12);
+      transition: transform .25s ease, box-shadow .25s ease;
+      position: relative;
+    }
+
+    .action-icon::after {
+      content: attr(data-label);
+      position: absolute;
+      top: 100%;
+      margin-top: 6px;
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+
+    .action-icon:hover {
+      transform: scale(1.15) translateY(-2px);
+      box-shadow: 0 18px 34px rgba(33, 31, 39, .2);
+    }
+
+    .action-icon:hover::after {
+      opacity: 1;
+    }
+
+    .map {
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      border: 0;
+      filter: saturate(.9);
+    }
+
+    .social {
+      padding: 78px 0;
+      background: var(--white);
+    }
+
+    .social-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #fff, #faf8fd);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-icon,
+    .wa-float {
+      display: inline-grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: var(--white);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .social-icon:hover,
+    .wa-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(33, 31, 39, .18);
+    }
+
+    .facebook { background: #1877f2; }
+    .linkedin { background: #0a66c2; }
+    .whatsapp { background: #25d366; }
+    .phone { background: #6d50a7; }
+    .email { background: #7c6f82; }
+
+    .wa-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 60;
+      width: 62px;
+      height: 62px;
+      background: #25d366;
+      box-shadow: 0 18px 36px rgba(37, 211, 102, .34);
+      animation: whatsappPulse 4.6s ease-in-out infinite;
+    }
+
+    .wa-float::before {
+      content: "Prenota ora";
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translate(8px, -50%);
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: .82rem;
+      font-weight: 800;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .wa-float:hover::before {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+
+    @keyframes whatsappPulse {
+      0%, 72%, 100% { box-shadow: 0 18px 36px rgba(37, 211, 102, .34), 0 0 0 0 rgba(37, 211, 102, .24); }
+      84% { box-shadow: 0 18px 36px rgba(37, 211, 102, .34), 0 0 0 14px rgba(37, 211, 102, 0); }
+    }
+
+    footer {
+      padding: 58px 0 34px;
+      border-top: 1px solid var(--line);
+      background: linear-gradient(135deg, #fff 0%, #faf8fd 55%, #f3edf9 100%);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-brand strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.1rem;
+    }
+
+    .footer-brand span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .footer-nav a {
+      color: var(--muted);
+      transition: color .2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: var(--lavender-dark);
+    }
+
+    .footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-actions .social-icon {
+      width: 44px;
+      height: 44px;
+    }
+
+    .footer-copy {
+      margin-top: 28px;
+      font-size: .9rem;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .reveal,
+    .reveal-card {
+      opacity: 0;
+      transform: translateY(34px);
+    }
+
+    @media (max-width: 980px) {
+      .hamburger { display: block; }
+      .nav-links {
+        position: fixed;
+        inset: 76px 0 auto 0;
+        display: grid;
+        gap: 0;
+        padding: 14px 18px 22px;
+        background: rgba(255, 255, 255, .96);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 24px 50px rgba(48, 38, 68, .08);
+        transform: translateY(-130%);
+        transition: transform .3s ease;
+      }
+
+      .nav-links.open { transform: translateY(0); }
+      .nav-links a { padding: 14px 0; }
+
+      .hero-grid,
+      .split,
+      .rating-panel,
+      .education-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 58px;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+        order: -1;
+      }
+
+      .doctor-frame img { min-height: 500px; }
+      .hero-badge { left: 18px; bottom: 22px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .mini-photo { right: 16px; bottom: -28px; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --container: min(100% - 28px, 1160px); }
+      section { padding: 78px 0; }
+      .nav { min-height: 70px; }
+      .brand { max-width: 230px; font-size: .92rem; }
+      .brand span { font-size: .72rem; }
+      .nav-links { inset: 70px 0 auto 0; }
+      .hero { padding: 34px 0 72px; }
+      .hero-grid { gap: 30px; }
+      h1 { font-size: clamp(3rem, 16vw, 4.8rem); }
+      h2 { font-size: clamp(2rem, 10vw, 3rem); }
+      .hero-actions { align-items: stretch; }
+      .btn { width: 100%; }
+      .hero-note { width: 100%; justify-content: center; }
+      .hero-visual { min-height: 430px; }
+      .doctor-frame img { min-height: 430px; }
+      .hero-badge {
+        width: 190px;
+        padding: 14px;
+      }
+      .hero-badge strong { font-size: 1.35rem; }
+      .contact-trust {
+        grid-template-columns: 1fr;
+      }
+      .rating-summary,
+      .contact-card,
+      .education-copy,
+      .social-row,
+      .hours-section {
+        padding: 24px;
+      }
+      .services-grid,
+      .steps,
+      .education-gallery {
+        grid-template-columns: 1fr;
+      }
+      .education-copy { min-height: auto; }
+      .education-img.tall { grid-row: auto; }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .footer-nav,
+      .footer-actions {
+        justify-content: center;
+        width: 100%;
+      }
+      .footer-nav {
+        gap: 18px;
+        font-size: .9rem;
+      }
+      .hours-day,
+      .hours-time {
+        font-size: .9rem;
+      }
+      .hours-row {
+        padding: 12px 0;
+        gap: 12px;
+      }
+      .mini-photo {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 72%;
+        margin: -52px 0 0 auto;
+      }
+      .hours div { display: grid; gap: 0; }
+      .social-row,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .map,
+      .map iframe { min-height: 390px; }
+      .wa-float {
+        right: 16px;
+        bottom: 16px;
+        width: 58px;
+        height: 58px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Vai all'inizio">
+        Dott.ssa Ilaria Capalbo
+        <span>Osteopata D.O. e Fisioterapista</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
+        <a href="#recensioni">Recensioni</a>
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#prima-visita">Prima visita</a>
+        <a href="#contatti">Contatti</a>
+        <a class="btn" href="https://wa.me/393408749082?text=Ciao%20Dott.ssa%20Capalbo%2C%20vorrei%20prenotare%20una%20visita." target="_blank" rel="noopener">Prenota ora</a>
+      </nav>
+      <button class="hamburger" id="menuToggle" type="button" aria-label="Apri menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Osteopatia e fisioterapia a Genova</span>
+          <h1>Ritrova il tuo equilibrio. Senza dolore.</h1>
+          <p>Se hai dolore, capiamo insieme da dove nasce. Osteopatia e fisioterapia personalizzata per adulti, sportivi, donne in gravidanza e bambini.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/393408749082?text=Ciao%20Dott.ssa%20Capalbo%2C%20vorrei%20prenotare%20una%20visita." target="_blank" rel="noopener">Prenota ora</a>
+            <span class="hero-note">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              111+ pazienti soddisfatti a Genova
+            </span>
+          </div>
+          <div class="trust-strip" aria-label="Punti di fiducia">
+            <span class="trust-pill"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 10.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>Studio a Genova</span>
+            <span class="trust-pill"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 7v6c0 5 3.4 7.8 8 9 4.6-1.2 8-4 8-9V7l-8-4Z" stroke="currentColor" stroke-width="2"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Trattamenti personalizzati</span>
+            <span class="trust-pill"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 3v4M16 3v4M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m8.5 14 2 2 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Prima visita completa</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="doctor-frame hero-image">
+            <img src="images/doctor.png" alt="Dott.ssa Ilaria Capalbo, osteopata e fisioterapista" />
+          </div>
+          <div class="hero-badge">
+            <strong>5.0</strong>
+            <span>111+ recensioni verificate <strong>Google</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" id="recensioni">
+      <div class="container rating-panel">
+        <div class="rating-summary reveal-card">
+          <div class="stars" aria-label="Cinque stelle">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h3>5.0 su 111 recensioni</h3>
+          <p>Un percorso chiaro, attento e costruito intorno alla persona: dall'ascolto iniziale ai consigli pratici per casa.</p>
+          <a class="btn secondary" href="https://www.google.com/search?q=Dott.ssa+Ilaria+Capalbo+-+Osteopata+D.O.+e+Fisioterapista" target="_blank" rel="noopener">Leggi tutte le recensioni su Google</a>
+        </div>
+        <div class="reviews">
+          <article class="review-card reveal-card">
+            <div class="review-stars" aria-label="Cinque stelle"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+            <strong class="review-name">Gabriella Cardaci</strong>
+            <p>"Accoglienza calorosa e professionalita fin dal primo momento. Ambiente curato e attenzione reale al paziente."</p>
+            <span class="verified-label">Recensione verificata Google</span>
+          </article>
+          <article class="review-card reveal-card">
+            <div class="review-stars" aria-label="Cinque stelle"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+            <strong class="review-name">Federica Pasotti</strong>
+            <p>"Competente, precisa e capace di metterti subito a tuo agio. Trattamento efficace fin dalla prima seduta."</p>
+            <span class="verified-label">Recensione verificata Google</span>
+          </article>
+          <article class="review-card reveal-card">
+            <div class="review-stars" aria-label="Cinque stelle"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+            <strong class="review-name">Marina Ferrari</strong>
+            <p>"Grande attenzione ai dettagli e approccio molto professionale. Miglioramento reale gia dalle prime sedute."</p>
+            <span class="verified-label">Recensione verificata Google</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="chi-sono">
+      <div class="container split">
+        <div class="portrait-stack reveal">
+          <div class="portrait-main">
+            <img src="images/doctor.png" alt="Ritratto professionale della Dott.ssa Ilaria Capalbo" />
+          </div>
+          <div class="mini-photo">
+            <img src="images/with patient.jpg" alt="Trattamento osteopatico in studio" />
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Approccio</span>
+          <h2>Ascolto clinico, precisione e cura personalizzata.</h2>
+          <p class="lead">La Dott.ssa Ilaria Capalbo integra osteopatia e fisioterapia per comprendere l'origine del disturbo, non solo il sintomo. Ogni visita nasce da un'anamnesi accurata, da una valutazione posturale e da un trattamento calibrato sulla persona.</p>
+          <div class="content-list">
+            <div>
+              <span class="check">✓</span>
+              <p><strong>Attenzione reale alla storia del paziente.</strong><br>Dolore, abitudini, postura, lavoro e sport vengono letti insieme.</p>
+            </div>
+            <div>
+              <span class="check">✓</span>
+              <p><strong>Trattamento manuale mirato.</strong><br>Tecniche scelte con delicatezza, controllo e obiettivi chiari.</p>
+            </div>
+            <div>
+              <span class="check">✓</span>
+              <p><strong>Continuita oltre la seduta.</strong><br>Indicazioni semplici per sostenere il miglioramento nella vita quotidiana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizi">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Servizi</span>
+          <h2>Trattamenti chiari per bisogni diversi.</h2>
+          <p>Dal dolore cervicale alla riabilitazione sportiva, ogni percorso parte da una valutazione individuale e da obiettivi condivisi.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal-card">
+            <img src="images/pain.jpg" alt="Dolore alla schiena e cervicale" />
+            <div class="body">
+              <h3>Mal di schiena e cervicale</h3>
+              <p>Valutazione e trattamento delle tensioni che limitano movimento, sonno e quotidianita.</p>
+            </div>
+          </article>
+          <article class="service-card reveal-card">
+            <img src="images/pain1.jpg" alt="Valutazione posturale della colonna" />
+            <div class="body">
+              <h3>Problemi posturali</h3>
+              <p>Scoliosi, lordosi e cifosi affrontate con un lavoro progressivo su postura e funzione.</p>
+            </div>
+          </article>
+          <article class="service-card reveal-card">
+            <img src="images/pain2.jpg" alt="Dolore alla spalla" />
+            <div class="body">
+              <h3>Spalla congelata</h3>
+              <p>Supporto manuale e riabilitativo per recuperare mobilita e ridurre il dolore.</p>
+            </div>
+          </article>
+          <article class="service-card reveal-card">
+            <img src="images/patient male.jpg" alt="Riabilitazione sportiva" />
+            <div class="body">
+              <h3>Riabilitazione sportiva</h3>
+              <p>Rientro graduale all'attivita con attenzione a gesto atletico, carichi e prevenzione.</p>
+            </div>
+          </article>
+          <article class="service-card reveal-card">
+            <img src="images/patient f.jpg" alt="Trattamento in gravidanza" />
+            <div class="body">
+              <h3>Gravidanza</h3>
+              <p>Un approccio delicato per accompagnare i cambiamenti del corpo prima e dopo il parto.</p>
+            </div>
+          </article>
+          <article class="service-card reveal-card">
+            <img src="images/patient ff.jpg" alt="Osteopatia per neonati e bambini" />
+            <div class="body">
+              <h3>Neonati e bambini</h3>
+              <p>Valutazioni attente e manovre dolci in un contesto calmo e rassicurante.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="education">
+      <div class="container education-grid">
+        <div class="education-copy reveal">
+          <span class="eyebrow">Educazione visiva</span>
+          <h2>Capire il corpo aiuta a guarire meglio.</h2>
+          <p>Durante la visita, il dolore viene collegato a mobilita, postura, carichi e compensi. La spiegazione rende il percorso piu chiaro e il paziente piu consapevole.</p>
+        </div>
+        <div class="education-gallery">
+          <div class="education-img tall parallax-img">
+            <img src="images/pain6.jpg" alt="Anatomia e postura del corpo" />
+          </div>
+          <div class="education-img parallax-img">
+            <img src="images/pain1.jpg" alt="Colonna vertebrale e postura" />
+          </div>
+          <div class="education-img parallax-img">
+            <img src="images/pain2.jpg" alt="Scapole e spalla" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="prima-visita">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Prima visita</span>
+          <h2>Un percorso semplice, senza incertezze.</h2>
+          <p>Dalla prima conversazione al piano di trattamento, sai sempre cosa stiamo valutando e perche.</p>
+        </div>
+        <div class="steps">
+          <article class="step-card reveal-card">
+            <h3>Anamnesi completa</h3>
+            <p>Raccolta della storia clinica, dei sintomi e delle abitudini quotidiane.</p>
+          </article>
+          <article class="step-card reveal-card">
+            <h3>Valutazione posturale</h3>
+            <p>Osservazione di mobilita, compensi e aree che possono contribuire al disturbo.</p>
+          </article>
+          <article class="step-card reveal-card">
+            <h3>Trattamento personalizzato</h3>
+            <p>Tecniche manuali scelte in base a obiettivo, sensibilita e risposta del corpo.</p>
+          </article>
+          <article class="step-card reveal-card">
+            <h3>Consigli per casa</h3>
+            <p>Indicazioni pratiche per mantenere i benefici e muoverti con piu sicurezza.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Domande frequenti.</h2>
+        </div>
+        <div class="faq-grid reveal">
+          <div class="faq-item active">
+            <button class="faq-question" type="button">
+              Quanto dura una seduta?
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer"><p>In genere una seduta dura circa 45-60 minuti, in base alla valutazione e al tipo di trattamento necessario.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Serve prescrizione?
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer"><p>No, puoi prenotare direttamente. Se hai referti, esami o indicazioni mediche recenti, portali alla visita.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Quante sedute servono?
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer"><p>Dipende dal problema, dalla sua durata e dalla risposta individuale. Dopo la prima visita viene condivisa una proposta realistica.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Trattate anche bambini?
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer"><p>Si, neonati e bambini vengono valutati con un approccio delicato, rispettoso e adatto all'eta.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="orari">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Orari dello studio</span>
+          <h2>Quando trovarmi.</h2>
+        </div>
+        <div class="hours-section reveal-card">
+          <div class="hours-row">
+            <div class="hours-day">Lunedì – Venerdì</div>
+            <div class="hours-divider"></div>
+            <div class="hours-time">9:00 – 12:00 / 15:00 – 20:00</div>
+          </div>
+          <div class="hours-row">
+            <div class="hours-day">Sabato</div>
+            <div class="hours-divider"></div>
+            <div class="hours-time">Chiuso</div>
+          </div>
+          <div class="hours-row">
+            <div class="hours-day">Domenica</div>
+            <div class="hours-divider"></div>
+            <div class="hours-time">Chiuso</div>
+          </div>
+          <div class="hours-note">
+            ℹ️ <strong>Orari su appuntamento.</strong> Contattami per verificare disponibilità e trovare lo slot più adatto a te.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contatti">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Contatti</span>
+          <h2>Prenota la tua visita a Genova.</h2>
+          <p>Scegli il canale più comodo per te. Rispondo rapidamente su tutti i contatti e troveremo lo slot perfetto per la tua prima visita.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal-card">
+            <div class="action-icons" aria-label="Contatti rapidi">
+              <a class="action-icon phone" href="tel:+393408749082" data-label="Telefono" aria-label="Chiama">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v2.7a2 2 0 0 1-2.18 2 19.77 19.77 0 0 1-8.62-3.07 19.45 19.45 0 0 1-6-6A19.77 19.77 0 0 1 2.12 3.9 2 2 0 0 1 4.11 1.7h2.7a2 2 0 0 1 2 1.72c.13 1 .36 1.97.68 2.9a2 2 0 0 1-.45 2.11L7.9 9.57a16 16 0 0 0 6 6l1.14-1.14a2 2 0 0 1 2.11-.45c.93.32 1.9.55 2.9.68A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="action-icon email" href="mailto:ilaria.capalbo@gmail.com" data-label="Email" aria-label="Invia email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/><path d="m22 7-10 6L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="action-icon whatsapp" href="https://wa.me/393408749082?text=Ciao%20Dott.ssa%20Capalbo%2C%20vorrei%20prenotare%20una%20visita." target="_blank" rel="noopener" data-label="WhatsApp" aria-label="WhatsApp">
+                <svg width="25" height="25" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.84 3 3 8.75 3 15.82c0 2.28.62 4.51 1.79 6.46L3.01 29l6.91-1.77a13.14 13.14 0 0 0 6.1 1.52C23.19 28.75 29 23 29 15.82S23.19 3 16.02 3Zm0 23.58c-1.89 0-3.74-.5-5.35-1.45l-.38-.23-4.1 1.05 1.08-3.93-.26-.41a10.55 10.55 0 0 1-1.64-5.79c0-5.86 4.78-10.63 10.65-10.63 5.86 0 10.63 4.77 10.63 10.63 0 5.86-4.77 10.76-10.63 10.76Zm5.84-7.96c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.35-.49-2.57-1.56-.95-.84-1.59-1.88-1.78-2.2-.19-.32-.02-.49.14-.65.15-.14.32-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.11-1.13 2.7s1.16 3.13 1.32 3.35c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.91-.78 2.18-1.54.27-.76.27-1.41.19-1.54-.08-.13-.29-.21-.61-.37Z"/></svg>
+              </a>
+              <a class="action-icon facebook" href="https://www.facebook.com/ilariacapalboosteopata" target="_blank" rel="noopener" data-label="Facebook" aria-label="Facebook">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.1 8.45h2.23V5.06A28.64 28.64 0 0 0 14.08 4c-3.21 0-5.41 1.9-5.41 5.38v3H5v3.79h3.67V24h4.5v-7.83h3.52l.56-3.79h-4.08V9.75c0-1.1.32-1.3 1.93-1.3Z"/></svg>
+              </a>
+              <a class="action-icon linkedin" href="https://www.linkedin.com/in/ilaria-capalbo-6ab39683/" target="_blank" rel="noopener" data-label="LinkedIn" aria-label="LinkedIn">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.36 8.05h4.27V24H.36V8.05Zm7.45 0h4.09v2.19h.06c.57-1.08 1.96-2.22 4.04-2.22 4.32 0 5.12 2.85 5.12 6.55V24h-4.27v-8.37c0-2-.04-4.57-2.78-4.57-2.79 0-3.22 2.18-3.22 4.42V24H7.81V8.05Z"/></svg>
+              </a>
+            </div>
+            <div class="contact-trust" aria-label="Vantaggi">
+              <span><strong>✓ Risposta rapida</strong> su WhatsApp</span>
+              <span><strong>✓ Prima visita</strong> completa e personalizzata</span>
+              <span><strong>✓ Nessun impegno</strong> iniziale</span>
+            </div>
+            <div class="contact-row">
+              <span class="label">Telefono</span>
+              <a href="tel:+393408749082">340 874 9082</a>
+            </div>
+            <div class="contact-row">
+              <span class="label">Email</span>
+              <a href="mailto:ilaria.capalbo@gmail.com">ilaria.capalbo@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <span class="label">Indirizzo</span>
+              <strong>Via Sapello 25r, Genova</strong>
+            </div>
+            <a class="btn" style="margin-top: 18px; width: 100%;" href="https://wa.me/393408749082?text=Ciao%20Dott.ssa%20Capalbo%2C%20vorrei%20prenotare%20una%20visita." target="_blank" rel="noopener">Prenota su WhatsApp</a>
+          </div>
+          <div class="map reveal-card">
+            <iframe title="Mappa dello studio in Via Sapello 25r, Genova" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20Sapello%2025r%2C%20Genova&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social">
+      <div class="container social-row reveal">
+        <div>
+          <span class="eyebrow">Connessione</span>
+          <h2>Non sei solo nel tuo percorso.</h2>
+          <p class="lead">Condivido consigli, aggiornamenti e supporto sui canali social. Entra in contatto quando vuoi: sono qui per guidarti verso il benessere.</p>
+        </div>
+        <div class="social-icons" aria-label="Link social">
+          <a class="social-icon facebook" href="https://www.facebook.com/ilariacapalboosteopata" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.1 8.45h2.23V5.06A28.64 28.64 0 0 0 14.08 4c-3.21 0-5.41 1.9-5.41 5.38v3H5v3.79h3.67V24h4.5v-7.83h3.52l.56-3.79h-4.08V9.75c0-1.1.32-1.3 1.93-1.3Z"/></svg>
+          </a>
+          <a class="social-icon linkedin" href="https://www.linkedin.com/in/ilaria-capalbo-6ab39683/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.36 8.05h4.27V24H.36V8.05Zm7.45 0h4.09v2.19h.06c.57-1.08 1.96-2.22 4.04-2.22 4.32 0 5.12 2.85 5.12 6.55V24h-4.27v-8.37c0-2-.04-4.57-2.78-4.57-2.79 0-3.22 2.18-3.22 4.42V24H7.81V8.05Z"/></svg>
+          </a>
+          <a class="social-icon whatsapp" href="https://wa.me/393408749082?text=Ciao%20Dott.ssa%20Capalbo%2C%20vorrei%20prenotare%20una%20visita." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="25" height="25" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.84 3 3 8.75 3 15.82c0 2.28.62 4.51 1.79 6.46L3.01 29l6.91-1.77a13.14 13.14 0 0 0 6.1 1.52C23.19 28.75 29 23 29 15.82S23.19 3 16.02 3Zm0 23.58c-1.89 0-3.74-.5-5.35-1.45l-.38-.23-4.1 1.05 1.08-3.93-.26-.41a10.55 10.55 0 0 1-1.64-5.79c0-5.86 4.78-10.63 10.65-10.63 5.86 0 10.63 4.77 10.63 10.63 0 5.86-4.77 10.76-10.63 10.76Zm5.84-7.96c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.35-.49-2.57-1.56-.95-.84-1.59-1.88-1.78-2.2-.19-.32-.02-.49.14-.65.15-.14.32-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.11-1.13 2.7s1.16 3.13 1.32 3.35c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.91-.78 2.18-1.54.27-.76.27-1.41.19-1.54-.08-.13-.29-.21-.61-.37Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Dott.ssa Ilaria Capalbo</strong>
+        <span>Osteopata D.O. e Fisioterapista</span>
+      </div>
+      <nav class="footer-nav" aria-label="Navigazione footer">
+        <a href="#recensioni">Recensioni</a>
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#prima-visita">Prima visita</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+      <div class="footer-actions">
+        <a class="social-icon facebook" href="https://www.facebook.com/ilariacapalboosteopata" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.1 8.45h2.23V5.06A28.64 28.64 0 0 0 14.08 4c-3.21 0-5.41 1.9-5.41 5.38v3H5v3.79h3.67V24h4.5v-7.83h3.52l.56-3.79h-4.08V9.75c0-1.1.32-1.3 1.93-1.3Z"/></svg>
+        </a>
+        <a class="social-icon linkedin" href="https://www.linkedin.com/in/ilaria-capalbo-6ab39683/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.36 8.05h4.27V24H.36V8.05Zm7.45 0h4.09v2.19h.06c.57-1.08 1.96-2.22 4.04-2.22 4.32 0 5.12 2.85 5.12 6.55V24h-4.27v-8.37c0-2-.04-4.57-2.78-4.57-2.79 0-3.22 2.18-3.22 4.42V24H7.81V8.05Z"/></svg>
+        </a>
+        <a class="btn" href="https://wa.me/393408749082?text=Ciao%20Dott.ssa%20Capalbo%2C%20vorrei%20prenotare%20una%20visita." target="_blank" rel="noopener">Prenota su WhatsApp</a>
+      </div>
+    </div>
+    <div class="container footer-copy">&copy; 2026 Tutti i diritti riservati. Osteopata D.O. e Fisioterapista a Genova</div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/393408749082?text=Ciao%20Dott.ssa%20Capalbo%2C%20vorrei%20prenotare%20una%20visita." target="_blank" rel="noopener" aria-label="Prenota su WhatsApp">
+    <svg width="31" height="31" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.84 3 3 8.75 3 15.82c0 2.28.62 4.51 1.79 6.46L3.01 29l6.91-1.77a13.14 13.14 0 0 0 6.1 1.52C23.19 28.75 29 23 29 15.82S23.19 3 16.02 3Zm0 23.58c-1.89 0-3.74-.5-5.35-1.45l-.38-.23-4.1 1.05 1.08-3.93-.26-.41a10.55 10.55 0 0 1-1.64-5.79c0-5.86 4.78-10.63 10.65-10.63 5.86 0 10.63 4.77 10.63 10.63 0 5.86-4.77 10.76-10.63 10.76Zm5.84-7.96c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.35-.49-2.57-1.56-.95-.84-1.59-1.88-1.78-2.2-.19-.32-.02-.49.14-.65.15-.14.32-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.11-1.13 2.7s1.16 3.13 1.32 3.35c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.91-.78 2.18-1.54.27-.76.27-1.41.19-1.54-.08-.13-.29-.21-.61-.37Z"/></svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      const button = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      if (item.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+
+      button.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+        document.querySelectorAll(".faq-item").forEach((other) => {
+          other.classList.remove("active");
+          other.querySelector(".faq-answer").style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add("active");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.timeline({ defaults: { ease: "power3.out" } })
+        .from(".hero-copy .eyebrow", { opacity: 0, y: 18, duration: .7 })
+        .from(".hero-copy h1", { opacity: 0, y: 34, duration: .9 }, "-=.35")
+        .from(".hero-copy p", { opacity: 0, y: 24, duration: .75 }, "-=.45")
+        .from(".hero-actions", { opacity: 0, y: 20, duration: .65 }, "-=.35")
+        .from(".trust-strip .trust-pill", { opacity: 0, y: 12, stagger: .08, duration: .55 }, "-=.25")
+        .from(".hero-visual", { opacity: 0, x: 42, scale: .98, duration: 1 }, "-=.85")
+        .from(".hero-badge", { opacity: 0, scale: .92, duration: .55 }, "-=.3");
+
+      gsap.to(".hero-image img", {
+        scale: 1.16,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      gsap.utils.toArray(".reveal").forEach((el) => {
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: .85,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 82%"
+          }
+        });
+      });
+
+      gsap.utils.toArray(".reveal-card").forEach((el, index) => {
+        if (el.matches(".review-card, .service-card")) return;
+
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: .72,
+          delay: (index % 6) * .04,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 86%"
+          }
+        });
+      });
+
+      gsap.utils.toArray(".reviews").forEach((group) => {
+        const cards = group.querySelectorAll(".review-card");
+        gsap.to(cards, {
+          opacity: 1,
+          y: 0,
+          duration: .78,
+          stagger: .18,
+          rotate: 0,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: group,
+            start: "top 82%"
+          }
+        });
+
+        gsap.from(".rating-summary .stars", {
+          opacity: 0,
+          scale: .82,
+          duration: .55,
+          ease: "back.out(1.6)",
+          scrollTrigger: {
+            trigger: group,
+            start: "top 84%"
+          }
+        });
+
+        gsap.from(group.querySelectorAll(".review-stars span"), {
+          opacity: 0,
+          scale: .4,
+          duration: .42,
+          stagger: .035,
+          ease: "back.out(1.8)",
+          scrollTrigger: {
+            trigger: group,
+            start: "top 80%"
+          }
+        });
+      });
+
+      gsap.to(".hours-section", {
+        opacity: 1,
+        y: 0,
+        duration: .85,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".hours-section",
+          start: "top 82%"
+        }
+      });
+
+      gsap.utils.toArray(".action-icon").forEach((icon, index) => {
+        gsap.fromTo(icon,
+          { opacity: 0, scale: 0.8, y: 10 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: .45,
+            delay: index * .05,
+            ease: "back.out(1.8)",
+            scrollTrigger: {
+              trigger: icon.closest(".action-icons"),
+              start: "top 88%"
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray(".services-grid").forEach((group) => {
+        gsap.fromTo(group.querySelectorAll(".service-card"),
+          { opacity: 0, y: 30, scale: .96 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: .74,
+            stagger: .08,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: group,
+              start: "top 82%"
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray(".parallax-img img").forEach((img) => {
+        gsap.fromTo(img,
+          { yPercent: -8, scale: 1.08 },
+          {
+            yPercent: 8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: img.closest(".parallax-img"),
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true
+            }
+          }
+        );
+      });
+    } else {
+      document.querySelectorAll(".reveal, .reveal-card").forEach((el) => {
+        el.style.opacity = 1;
+        el.style.transform = "none";
+      });
+    }
+  </script>
+</body>
+</html>
